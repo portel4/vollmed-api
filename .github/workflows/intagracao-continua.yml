@@ -1,16 +1,16 @@
 name: CI Voll Med
-
+#Toda vez que um novo código é adicionada a main ou pull_request, vai rodar o pipeline.
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
+#Esse comando vai especificar que esse job vai rodar em uma máquina virtual Ubuntu mais recente.
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
+#Esse passo vai fazer com que o código do nosso repositório seja clonado para a VM do nosso pipeline.
     steps:
     - uses: actions/checkout@v3
     
