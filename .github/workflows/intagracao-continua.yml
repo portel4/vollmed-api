@@ -33,3 +33,8 @@ jobs:
       
     - name: Executa os testes unitários
       run: mvn -B verify
+
+    - name: Analise estatica
+      env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=portel4_vollmed-api
